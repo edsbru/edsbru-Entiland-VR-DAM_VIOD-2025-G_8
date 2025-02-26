@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _brokenTarget: {fileID: 6034007096145353798, guid: ae84b447f0efc074c986667b0956d0d5, type: 3}
-  _targetChild: {fileID: 919132149155446097, guid: 609802589ff53a4468f24e8a1073d286, type: 3}
+  _targetChild: {fileID: 3725730548966862156}
   _targetType: 0
 --- !u!54 &205387292639756193
 Rigidbody:
