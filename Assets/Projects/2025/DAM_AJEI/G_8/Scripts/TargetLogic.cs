@@ -5,26 +5,24 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Ocho
 {
     public class TargetLogic : MonoBehaviour
     {
-        //Definimos un enum para los difarantes tipos de targets
         enum TargetType { NORMAL, OBSTACLE, SPECIAL }
 
         [SerializeField] private GameObject _brokenTarget;
         [SerializeField] private GameObject _targetChild;
         [SerializeField] private TargetType _targetType;
 
-        //Lógica al impactar una bala
         void TargetHit()
         {
             switch (_targetType)
             {
                 case TargetType.NORMAL:
-                    NormalTargetHit(); // ScoreManagerSingleton.Instance.AddScore(100);
+                    NormalTargetHit();
                     break;
                 case TargetType.OBSTACLE:
-                    ObstacleTargetHit(); // ScoreManagerSingleton.Instance.AddScore(500);
+                    ObstacleTargetHit();
                     break;
                 case TargetType.SPECIAL:
-                    SpecialTargetHit(); // ScoreManagerSingleton.Instance.AddScore(-100);
+                    SpecialTargetHit();
                     break;
                 default:
                     break;

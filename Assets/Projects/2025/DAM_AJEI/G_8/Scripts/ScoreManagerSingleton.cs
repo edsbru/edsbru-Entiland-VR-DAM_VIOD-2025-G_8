@@ -6,6 +6,7 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Ocho {
     {
         // Declaramos instacia del Singleton T = ScoreManager
         public int score = 0;
+        public int maxScore = 5000;
     
         public static ScoreManagerSingleton Instance { get; private set; } // Otras clases pueden obterner una referencia pero no modificarla
     
