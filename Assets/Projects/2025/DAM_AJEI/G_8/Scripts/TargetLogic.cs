@@ -10,6 +10,8 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Ocho
         [SerializeField] private GameObject _brokenTarget;
         [SerializeField] private GameObject _targetChild;
         [SerializeField] private TargetType _targetType;
+        [SerializeField] private AudioSource _normalBreakSound;
+        [SerializeField] private AudioSource _specialBreakSound;
 
         void TargetHit()
         {
@@ -32,11 +34,13 @@ namespace EntilandVR.DosCinco.DAM_AJEI.G_Ocho
         void NormalTargetHit()
         {
             ScoreManagerSingleton.Instance.AddScore(100);
+            _normalBreakSound.Play();
         }
 
         void SpecialTargetHit()
         {
             ScoreManagerSingleton.Instance.AddScore(500);
+            _specialBreakSound.Play();
         }
 
         void ObstacleTargetHit()
