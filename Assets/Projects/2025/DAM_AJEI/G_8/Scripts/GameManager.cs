@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private bool isGameWon;
     public TextMeshProUGUI winText;
     public TextMeshProUGUI winTime;
     public TextMeshProUGUI scoreCurrentValue;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         scoreMaxValue.text = "/ " + ScoreManagerSingleton.Instance.maxScore.ToString();
         winText.gameObject.SetActive(false);
         winTime.gameObject.SetActive(false);
+        isGameWon = false;
     }
 
     // Update is called once per frame
@@ -26,13 +28,17 @@ public class GameManager : MonoBehaviour
         if (ScoreManagerSingleton.Instance.score == ScoreManagerSingleton.Instance.maxScore)
         {
             WinGame();
+            isGameWon = true;
         }
     }
 
     public void WinGame()
     {
-        winText.gameObject.SetActive(true);
-        winTime.gameObject.SetActive(true);
-        winTime.text = timerController.timerText.text;
+        if (!isGameWon)
+        {
+            winText.gameObject.SetActive(true);
+            winTime.gameObject.SetActive(true);
+            winTime.text = timerController.timerText.text;
+        }
     }
 }
